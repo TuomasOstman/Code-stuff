@@ -3,11 +3,11 @@ import apulaiset.*;
 import fi.uta.csjola.oope.lista.*;
 import Lotkoja.*;
 
-/**Simulaation luokka, joka simuloi lotkojen elämää alkulimassa
-  *@author Tuomas Östman
+/**Simulaation luokka, joka simuloi lotkojen elÃ¤mÃ¤Ã¤ alkulimassa
+  *@author Tuomas Ã–stman
   *
-  *
-  *
+  *This is a part of my coursework
+  *Rest of the work was partly code from the course so can't upload that.
   */
   
 public class Simulaatio{
@@ -25,7 +25,7 @@ public class Simulaatio{
    /**Lista johon talletetaan lotkot */
    static OmaLista lotkoLista;
    
-   /**Lista johon laitetaan tietyssä paikassa olevat Lötköt*/
+   /**Lista johon laitetaan tietyssÃ¤ paikassa olevat LÃ¶tkÃ¶t*/
    static OmaLista paikanLotkot;
 
    /**Maksimi x koordinaatti */
@@ -35,7 +35,7 @@ public class Simulaatio{
    /**Uuden lotkon tuleva indeksi */
    static int indeksi = 0;
    
-   /**Metodi joka lukee komennot ja jossa on itse ohjelma pyöritys
+   /**Metodi joka lukee komennot ja jossa on itse ohjelma pyÃ¶ritys
      */
    public static void simulointi(){
       String komento;  
@@ -48,7 +48,7 @@ public class Simulaatio{
          komento = In.readString();
          
          String[] komennonOsat = komento.split("[ ]");
-         //Jos oikea syote niin jateketaan ja kokeillaan myös että heitteleeko virheita
+         //Jos oikea syote niin jateketaan ja kokeillaan myÃ¶s ettÃ¤ heitteleeko virheita
          try{
             if(komennonOsat[0].equals(LATAA) || komennonOsat[0].equals(LISTAA) || komennonOsat[0].equals(LIIKU) ||
                komennonOsat[0].equals(LUO) || komennonOsat[0].equals(TALLENNA) || komennonOsat[0].equals(LOPETA)){
@@ -211,7 +211,7 @@ public class Simulaatio{
      */
    public static void listaa(){
 
-      //Luetaan Myös simenluku ja koordinaatit
+      //Luetaan MyÃ¶s simenluku ja koordinaatit
       String tiedot = (String)lotkoLista.alkio(0);
       String[] tiedonOsat = tiedot.split("["+EROTIN+"]");
       for(int j = 0; j < tiedonOsat.length;j++){
@@ -406,17 +406,17 @@ public class Simulaatio{
      *
      */
    public static void luo(){
-      // Vähän plänttejä ja klimppejä joilla saadaan homma toimimaan
+      // VÃ¤hÃ¤n plÃ¤nttejÃ¤ ja klimppejÃ¤ joilla saadaan homma toimimaan
       Plantti suurinPlantti = null;
       Plantti apuPlantti = null;
       Plantti apuPlantti2 = null;
       Klimppi klimppiEka = null;
       Plantti planttiEka = null;
-      //lista johon talletetaan käydyt paikat
+      //lista johon talletetaan kÃ¤ydyt paikat
       OmaLista paikkaLista = new OmaLista();
-      // uuden värin muuttuja
+      // uuden vÃ¤rin muuttuja
       char uusiVari = ' ';
-      //Otetaan listan koko talteen, ettei se muutu kesken lisääntymisen
+      //Otetaan listan koko talteen, ettei se muutu kesken lisÃ¤Ã¤ntymisen
       int listanPituus = lotkoLista.koko();
       
       boolean samaPaikka = false;
@@ -425,7 +425,7 @@ public class Simulaatio{
       Paikka paikka2 = null;
       
       
-      //luuppi jossa käydään kaikki lötköt läpi 
+      //luuppi jossa kÃ¤ydÃ¤Ã¤n kaikki lÃ¶tkÃ¶t lÃ¤pi 
       for(int i = 0;i < listanPituus; i++){
          paikanLotkot = new OmaLista();
          boolean planttiLisaantyi = false;
@@ -450,7 +450,7 @@ public class Simulaatio{
                }
             }
          }
-         //jos paikassa ei jo käyty niin jatketaan
+         //jos paikassa ei jo kÃ¤yty niin jatketaan
          if(!kayty && paikkaOn && lotkoLista.alkio(i) != null){
             for(int j=0;j<=lotkoLista.koko();j++){
 
@@ -496,7 +496,7 @@ public class Simulaatio{
                      }
                   }
                }
-               //Jos pläntti
+               //Jos plÃ¤ntti
                if(paikanLotkot.alkio(j) instanceof Plantti){
                   boolean samanlainen = false;
                   boolean suurin = true;
@@ -517,7 +517,7 @@ public class Simulaatio{
                         }
                      }  
                   }
-                  //Katsellaan onko suurempaa tai samanlaista lötköä
+                  //Katsellaan onko suurempaa tai samanlaista lÃ¶tkÃ¶Ã¤
                   for(int h = 0; h <= paikanLotkot.koko(); h++){
                      if(paikanLotkot.alkio(h) instanceof Plantti){
                         apuPlantti2 = (Plantti)paikanLotkot.alkio(h);
@@ -546,7 +546,7 @@ public class Simulaatio{
       }   
    }
    
-   /**Metodi joka tallentaa lotkon ennalta määrättyyn tiedostoon
+   /**Metodi joka tallentaa lotkon ennalta mÃ¤Ã¤rÃ¤ttyyn tiedostoon
      */
    public static void tallenna(){
       try{
@@ -575,10 +575,10 @@ public class Simulaatio{
          System.out.println(VIRHE);
       }
    }
-   /**Metodi joka täytää stringin väleillä haluttuun määtään sakka
-   *@param s String mihin lisätään välejä
-   *@param m Kuinka pitkä string halutaan
-   *@return uusi täytetty string 
+   /**Metodi joka tÃ¤ytÃ¤Ã¤ stringin vÃ¤leillÃ¤ haluttuun mÃ¤Ã¤tÃ¤Ã¤n sakka
+   *@param s String mihin lisÃ¤tÃ¤Ã¤n vÃ¤lejÃ¤
+   *@param m Kuinka pitkÃ¤ string halutaan
+   *@return uusi tÃ¤ytetty string 
    */
    public static String valeja(String s, int m){
      return String.format("%1$-" + m + "s", s);  
