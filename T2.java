@@ -1,7 +1,10 @@
+
+// Little Example of database programming with java
+
 import java.sql.*;
 import java.util.*;
 public class T2{
-	//Testist‰ lainatut vakiot shelliin yhdist‰miseen
+	//Testist√§ lainatut vakiot shelliin yhdist√§miseen
 	private static final String AJURI = "org.postgresql.Driver";
 	private static final String PROTOKOLLA = "jdbc:postgresql:";
 	private static final String PALVELIN = "localhost";
